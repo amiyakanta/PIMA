@@ -14,6 +14,10 @@ import matplotlib.pyplot as plt
 df=pd.read_csv("D:\diabetes.csv")
 #print(df)
 
+#View First 5 lines
+df.head()
+#View last 5 lines
+df.tail()
 #Describe the data to get first hand information like count,mean etc...
 print(df.describe())
 
@@ -28,7 +32,6 @@ Outcome = df['Outcome']
 #Visualise Univariate i.e. Plot Histogram for the variables created above
 plt.hist(Glucose)
 plt.hist(BMI)
-Outcome = df['Outcome']
 plt.show()
 
 #Visualise Bivariate i.e. scatter plot
