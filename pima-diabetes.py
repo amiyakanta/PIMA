@@ -81,8 +81,8 @@ sns.jointplot(x="Glucose",y="BMI",data=df,size=5)
 #Bin Variables after Rules are discovered 
 #Rule 1: Outcome is 1 if 30<BMI<=40
 #Rule 2: Outcome is 1 if 120<Glucose<=170
-df['BMIBin'] = np.where(df['BMI'] <30,'<30', (np.where(df['BMI'] >= 40 ,'>=40','30-40')))
-df['GlucoseBin'] = np.where(df['Glucose'] <120,'<120', (np.where(df['Glucose'] >= 170 ,'>=170','120-170')))
+train['BMIBin'] = np.where(train['BMI'] <30,'<30', (np.where(train['BMI'] >= 40 ,'>=40','30-40')))
+test['GlucoseBin'] = np.where(test['Glucose'] <120,'<120', (np.where(test['Glucose'] >= 170 ,'>=170','120-170')))
 
 #create Pivot Table on training data
 pd.pivot_table(train, values="BMI", index=["BMIBin"], columns="Outcome", aggfunc = "count",fill_value=0)
